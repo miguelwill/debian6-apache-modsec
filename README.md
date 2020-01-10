@@ -6,6 +6,8 @@ Apache2 over Debian 6 with PHP 5.3.3 and Mod-security
 debian6 image with apache2, PHP 5.3.3 and Mod-security , hosted in /etc/modsecurity
 ready to work with old, unupdated sites, such as joomla 2.5 for example
 
+ready to work with http (TCP/80) and https (TCP/443) connections
+the certificate can be loaded into an external load balancer (such as nginx) so that you do not need to replace the default certificate used in apache2
 
 # Configuration
 you only need to configure the database access data, and the files must be copied to the path of the loaded volume in /var/www
