@@ -8,5 +8,7 @@ cat /tmp/le > /etc/apache2/sites-enabled/default-ssl
 #echo "CustomLog /proc/self/fd/1" > /etc/apache2/conf.d/other-vhosts-access-log
 rm -f /etc/apache2/conf.d/other-vhosts-access-log
 
+/etc/init.d/memcached start
+
 rm -f /var/run/apache2.pid && exec apache2 -DFOREGROUND
 
