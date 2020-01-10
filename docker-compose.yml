@@ -1,0 +1,35 @@
+#version for config and support version 18
+version: '3.6'
+
+services:
+
+  www-netlinux:
+    image: squeeze-apache-php
+    depends_on:
+      - db
+    volumes:
+       - www:/var/www
+    restart: always
+    environment:
+      TZ: America/Santiago
+    ports:
+      - 80:80
+      - 443:443
+
+  db:
+    image: mariadb:10.3
+    restart: always
+    volumes:
+       - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: netlinux
+      MYSQL_DATABASE: sitiodb
+      MYSQL_USER: sitiouser
+      MYSQL_PASSWORD: sitioPass
+      TZ: America/Santiago
+    ports:
+      - 3306:3306
+
+volumes:
+  db-data:
+  www:
