@@ -3,7 +3,7 @@ version: '3.6'
 
 services:
 
-  www-netlinux:
+  apache2-modsec:
     image: squeeze-apache-php
     depends_on:
       - db
@@ -22,7 +22,7 @@ services:
     volumes:
        - db-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: netlinux
+      MYSQL_ROOT_PASSWORD: 2lk3j4l2j3l
       MYSQL_DATABASE: sitiodb
       MYSQL_USER: sitiouser
       MYSQL_PASSWORD: sitioPass
