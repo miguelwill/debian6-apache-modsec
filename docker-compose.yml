@@ -4,7 +4,7 @@ version: '3.6'
 services:
 
   apache2-modsec:
-    image: squeeze-apache-php
+    image: miguelwill/debian6-apache-modsec
     depends_on:
       - db
     volumes:
