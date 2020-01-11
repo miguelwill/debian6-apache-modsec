@@ -19,7 +19,7 @@ RUN apt-get update && \
 RUN apt-get update && \
     apt-get install -y --force-yes \
     net-tools vim rsyslog ca-certificates \
-    apache2 php5 php5-mysql php5-gd php5-imagick libapache2-mod-php5 php5-mcrypt mysql-client php5-memcache memcached php5-imap php-net-imap php-net-socket php-pear php5-mcrypt \
+    apache2 php5 php5-mysql php5-gd php5-imagick libapache2-mod-php5 php5-mcrypt mysql-client php5-memcache memcached php5-memcached php5-xcache php5-imap php-net-imap php-net-socket php-pear php5-mcrypt \
     rsync libapache-mod-security mod-security-common && \
     apt-get clean
 
@@ -63,4 +63,3 @@ COPY main.sh /
 
 ENTRYPOINT ["/main.sh"]
 CMD ["DEFAULT"]
-
