@@ -31,3 +31,4 @@ these parameters are also defined in docker-compose.yml file
 # Variables
 
   * 'TZ' - "time zone"
+  * 'RELAY_HOST' - "host or IP Address for relay host"

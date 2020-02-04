@@ -9,6 +9,12 @@ cat /tmp/le > /etc/apache2/sites-enabled/default-ssl
 rm -f /etc/apache2/conf.d/other-vhosts-access-log
 sed -i '/output_buffering = 4096/c output_buffering = Off' /etc/php5/apache2/php.ini
 
+if [ -n "$RELAY_HOST" ]
+then
+	postconf -e relayhost=$RELAY_HOST
+fi
+
 /etc/init.d/memcached start
+/etc/init.d/postfix start
 
 rm -f /var/run/apache2.pid && exec apache2 -DFOREGROUND
